@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+	
+    <!-- Hero Section -->
+    <section class="hero" id="cart-hero">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p class="tagline">Review your items and prepare for checkout.</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+                <!-- Cart Items -->
+                <div>
+                    <h2 style="margin-bottom: var(--spacing-lg);">Cart Items</h2>
+                    
+                    <div id="emptyCartMessage" class="highlight-section" style="text-align: center; padding: var(--spacing-xl);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">🛒</div>
+                        <h3>Your cart is empty</h3>
+                        <p style="color: #666; margin-bottom: var(--spacing-lg);">Start by browsing our shop to add items to your cart.</p>
+                        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+
+                    <table class="cart-table" id="cartTable" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartItems">
+                            <!-- Cart items will be inserted here -->
+                        </tbody>
+                    </table>
+
+                    <div id="cartActionsBottom" style="display: none; margin-top: var(--spacing-lg); display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+                        <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+                        <button class="btn btn-outline" onclick="clearCart()">Clear Cart</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div>
+                    <h2 style="margin-bottom: var(--spacing-lg);">Order Summary</h2>
+                    
+                    <div class="cart-summary" id="summaryBox" style="display: none;">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>$<span id="subtotal">0.00</span></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span>$<span id="shipping">0.00</span></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (7%):</span>
+                            <span>$<span id="tax">0.00</span></span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>$<span id="total">0.00</span></span>
+                        </div>
+
+                        <div style="margin-top: var(--spacing-lg); border-top: 1px solid var(--border-color); padding-top: var(--spacing-lg);">
+                            <h4 style="margin-bottom: var(--spacing-md);">Delivery Options</h4>
+                            <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                                    <input type="radio" name="delivery" value="digital" checked onchange="updateSummary()" style="cursor: pointer;">
+                                    <span>Digital Download (Free)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                                    <input type="radio" name="delivery" value="standard" onchange="updateSummary()" style="cursor: pointer;">
+                                    <span>Standard Shipping ($9.99)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+                                    <input type="radio" name="delivery" value="express" onchange="updateSummary()" style="cursor: pointer;">
+                                    <span>Express Shipping ($19.99)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: var(--spacing-lg);">
+                            <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block; padding: var(--spacing-md); box-sizing: border-box;">Proceed to Checkout</a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="highlight-section" style="margin-top: var(--spacing-lg); padding: var(--spacing-md);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: var(--spacing-md);">Order Information</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: #666;">
+                            <li>✓ Secure checkout</li>
+                            <li>✓ Multiple payment options</li>
+                            <li>✓ Order tracking</li>
+                            <li>✓ 30-day returns</li>
+                            <li>✓ Customer support available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital-first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+   <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let shippingCost = 0;
+        const taxRate = 0.07;
+
+        function renderCart() {
+            const table = document.getElementById('cartTable');
+            const tbody = document.getElementById('cartItems');
+            const emptyMsg = document.getElementById('emptyCartMessage');
+            const summaryBox = document.getElementById('summaryBox');
+            const cartActionsBottom = document.getElementById('cartActionsBottom');
+
+            if (cart.length === 0) {
+                table.style.display = 'none';
+                emptyMsg.style.display = 'block';
+                summaryBox.style.display = 'none';
+                cartActionsBottom.style.display = 'none';
+                updateCartBadge();
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            table.style.display = 'table';
+            summaryBox.style.display = 'block';
+            cartActionsBottom.style.display = 'flex';
+
+            tbody.innerHTML = '';
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                const itemTotal = (item.price * item.quantity).toFixed(2);
+                row.innerHTML = `
+                    <td><strong>${item.name}</strong></td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>
+                        <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)" style="width: 50px; padding: var(--spacing-xs); border: 1px solid var(--border-color); border-radius: var(--border-radius);">
+                    </td>
+                    <td><strong>$${itemTotal}</strong></td>
+                    <td><button class="btn btn-outline btn-small" onclick="removeItem(${index})">Remove</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            updateSummary();
+            updateCartBadge();
+        }
+
+        function updateQuantity(index, value) {
+            const quantity = parseInt(value);
+            if (quantity > 0) {
+                cart[index].quantity = quantity;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your entire cart?')) {
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            }
+        }
+
+        function updateSummary() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            const delivery = document.querySelector('input[name="delivery"]:checked').value;
+            shippingCost = delivery === 'digital' ? 0 : delivery === 'standard' ? 9.99 : 19.99;
+            
+            const tax = (subtotal + shippingCost) * taxRate;
+            const total = subtotal + shippingCost + tax;
+
+            document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+            document.getElementById('shipping').textContent = shippingCost.toFixed(2);
+            document.getElementById('tax').textContent = tax.toFixed(2);
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+
+        function updateCartBadge() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartBadge').textContent = totalItems;
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            renderCart();
+        });
+    </script>
+</body>
+</html>

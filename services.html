@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Packages - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+	
+    <!-- Hero Section -->
+    <section class="hero" id="services-hero">
+        <div class="container">
+            <h1>Photo Services & Packages</h1>
+            <p class="tagline">Professional photography for every occasion. Browse our service offerings and pricing.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section>
+        <div class="container">
+            <h2>Our Service Categories</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-lg); color: #666;">
+                Spectrum Photography Group specializes in a variety of photography services designed to meet your needs. 
+                Each package includes professional photography, digital editing, and convenient online delivery.
+            </p>
+
+            <!-- Service Cards Grid -->
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: var(--accent-bold); height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: var(--primary-dark); font-size: 64px;">🎓</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Graduation Photography</h3>
+                            <p class="card-text">Professional graduation photo packages including cap & gown portraits, group photos, and candid moments. Perfect for Class of 2025 and beyond.</p>
+                            <a href="#graduation" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: var(--accent-warm); height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 64px;">🎺</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Marching Band Coverage</h3>
+                            <p class="card-text">Complete event coverage for marching band competitions, parades, and performances. High quality action shots and formation photography.</p>
+                            <a href="#marching-band" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: var(--accent-teal); height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 64px;">👥</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Family Portraits</h3>
+                            <p class="card-text">Beautiful family portrait sessions in studio or outdoor settings. Professional editing included with all family packages.</p>
+                            <a href="#family" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: var(--accent-secondary); height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 64px;">💼</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Corporate & Headshots</h3>
+                            <p class="card-text">Professional headshots for LinkedIn, business purposes, and corporate events. Perfect for teams and executives.</p>
+                            <a href="#corporate" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: #5a4a42; height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 64px;">⚽</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Sporting Events</h3>
+                            <p class="card-text">Comprehensive coverage for games, tournaments, and athletic competitions. Action packed shots of your team in motion.</p>
+                            <a href="#sports" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="card">
+                        <div style="background: #3d5a5a; height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 64px;">💒</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Weddings & Engagements</h3>
+                            <p class="card-text">Specialized wedding and engagement photography capturing the love and joy of your special moments. Custom packages available.</p>
+                            <a href="#weddings" class="btn btn-outline">View Packages</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graduation Packages -->
+    <section id="graduation" class="highlight-section">
+        <div class="container">
+            <h2>Graduation Photography Packages</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-lg);">
+                Celebrate your graduation with professional photos. All packages include digital editing and online delivery.
+            </p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Bronze Package</h3>
+                        <div class="package-price">$299</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Perfect for individual portraits</p>
+                        <ul class="package-features">
+                            <li>✓ 1 Hour Session</li>
+                            <li>✓ Cap & Gown Portraits</li>
+                            <li>✓ 25 Digital Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Graduation Bronze', 299)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Silver Package</h3>
+                        <div class="package-price">$499</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Great for groups and variety</p>
+                        <ul class="package-features">
+                            <li>✓ 2 Hour Session</li>
+                            <li>✓ Multiple Outfit Changes</li>
+                            <li>✓ 60 Digital Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                            <li>✓ Print Discount Card</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Graduation Silver', 499)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Gold Package</h3>
+                        <div class="package-price">$799</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Premium experience with everything</p>
+                        <ul class="package-features">
+                            <li>✓ 3 Hour Session</li>
+                            <li>✓ Multiple Locations</li>
+                            <li>✓ 100+ Digital Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                            <li>✓ Custom Album</li>
+                            <li>✓ Priority Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Graduation Gold', 799)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marching Band Packages -->
+    <section id="marching-band">
+        <div class="container">
+            <h2>Marching Band & Event Coverage</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-lg);">
+                Professional coverage of competitions, parades, and performances.
+            </p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Single Event</h3>
+                        <div class="package-price">$449</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">One competition or event</p>
+                        <ul class="package-features">
+                            <li>✓ 3 Hour Coverage</li>
+                            <li>✓ All Performances Captured</li>
+                            <li>✓ 150+ Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Band Single Event', 449)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">Best Value</div>
+                    <div class="package-header">
+                        <h3>Season Pass</h3>
+                        <div class="package-price">$1,199</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Coverage for entire season</p>
+                        <ul class="package-features">
+                            <li>✓ Up to 5 Events</li>
+                            <li>✓ Full Coverage Each Event</li>
+                            <li>✓ 750+ Photos Total</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Private Gallery</li>
+                            <li>✓ Print Discounts</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Band Season Pass', 1199)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Parade Coverage</h3>
+                        <div class="package-price">$299</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Parade or community event</p>
+                        <ul class="package-features">
+                            <li>✓ 2 Hour Coverage</li>
+                            <li>✓ Action & Formation Shots</li>
+                            <li>✓ 75+ Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Band Parade', 299)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family & Corporate Packages -->
+    <section id="family" class="highlight-section">
+        <div class="container">
+            <h2>Family Portraits & Corporate Packages</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-top: var(--spacing-lg);">
+                <div>
+                    <h3 style="color: var(--accent-bold); margin-bottom: var(--spacing-md);">Family Portraits</h3>
+                    
+                    <div class="package-card" style="margin-bottom: var(--spacing-lg);">
+                        <div class="package-header">
+                            <h4 style="margin: 0;">Family Session</h4>
+                            <div class="package-price" style="font-size: 28px;">$349</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features" style="margin-bottom: var(--spacing-md);">
+                                <li>✓ 1 Hour Session</li>
+                                <li>✓ Up to 8 People</li>
+                                <li>✓ 40 Edited Photos</li>
+                                <li>✓ Professional Editing</li>
+                                <li>✓ Online Gallery</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="addPackageToCart('Family Session', 349)">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h4 style="margin: 0;">Extended Family</h4>
+                            <div class="package-price" style="font-size: 28px;">$499</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features" style="margin-bottom: var(--spacing-md);">
+                                <li>✓ 2 Hour Session</li>
+                                <li>✓ Unlimited People</li>
+                                <li>✓ 60 Edited Photos</li>
+                                <li>✓ Professional Editing</li>
+                                <li>✓ Online Gallery</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="addPackageToCart('Extended Family', 499)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-warm); margin-bottom: var(--spacing-md);">Corporate Headshots</h3>
+                    
+                    <div class="package-card" style="margin-bottom: var(--spacing-lg);">
+                        <div class="package-header">
+                            <h4 style="margin: 0;">Individual Headshots</h4>
+                            <div class="package-price" style="font-size: 28px;">$99</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features" style="margin-bottom: var(--spacing-md);">
+                                <li>✓ Professional Session</li>
+                                <li>✓ 3 Outfit Options</li>
+                                <li>✓ 10 Edited Photos</li>
+                                <li>✓ Multiple Backgrounds</li>
+                                <li>✓ Digital Files</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="addPackageToCart('Individual Headshot', 99)">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h4 style="margin: 0;">Team Headshots</h4>
+                            <div class="package-price" style="font-size: 28px;">From $599</div>
+                        </div>
+                        <div class="package-body">
+                            <ul class="package-features" style="margin-bottom: var(--spacing-md);">
+                                <li>✓ Group Session</li>
+                                <li>✓ 5-10 People</li>
+                                <li>✓ Individual & Group Photos</li>
+                                <li>✓ Professional Editing</li>
+                                <li>✓ Digital Gallery</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="addPackageToCart('Team Headshots', 599)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sporting Events -->
+    <section id="sports">
+        <div class="container">
+            <h2>Sporting Events Photography</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-lg);">
+                Action-packed coverage of your team's greatest moments. Capture the excitement and intensity of game day.
+            </p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Single Game</h3>
+                        <div class="package-price">$399</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">One game or match</p>
+                        <ul class="package-features">
+                            <li>✓ Full Game Coverage</li>
+                            <li>✓ Action & Celebration Shots</li>
+                            <li>✓ 150+ Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Sports Single Game', 399)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">Best Value</div>
+                    <div class="package-header">
+                        <h3>Season Coverage</h3>
+                        <div class="package-price">$1,299</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Full season of games</p>
+                        <ul class="package-features">
+                            <li>✓ Up to 8 Games</li>
+                            <li>✓ Full Coverage Each Game</li>
+                            <li>✓ 1,200+ Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Private Gallery</li>
+                            <li>✓ Print Discounts</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Sports Season Coverage', 1299)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Tournament</h3>
+                        <div class="package-price">$799</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Multi-day tournament</p>
+                        <ul class="package-features">
+                            <li>✓ Multiple Games/Days</li>
+                            <li>✓ Complete Tournament Coverage</li>
+                            <li>✓ 300+ Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Sports Tournament', 799)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weddings & Engagements -->
+    <section id="weddings" class="highlight-section">
+        <div class="container">
+            <h2>Weddings & Engagement Photography</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-lg);">
+                Capture the love, joy, and beautiful moments of your special day. Customizable packages for your unique celebration.
+            </p>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Engagement Session</h3>
+                        <div class="package-price">$349</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Celebrate your engagement</p>
+                        <ul class="package-features">
+                            <li>✓ 2 Hour Session</li>
+                            <li>✓ Multiple Locations</li>
+                            <li>✓ 75+ Edited Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Engagement Session', 349)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Wedding Day</h3>
+                        <div class="package-price">$1,999</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Full day wedding coverage</p>
+                        <ul class="package-features">
+                            <li>✓ 8 Hour Coverage</li>
+                            <li>✓ Prep & Ceremony & Reception</li>
+                            <li>✓ 400+ Edited Photos</li>
+                            <li>✓ Professional Editing</li>
+                            <li>✓ Online Gallery & Album</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Wedding Day Coverage', 1999)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Premium Wedding</h3>
+                        <div class="package-price">$2,799</div>
+                    </div>
+                    <div class="package-body">
+                        <p class="package-desc">Extended coverage & luxury</p>
+                        <ul class="package-features">
+                            <li>✓ 12 Hour Coverage</li>
+                            <li>✓ Second Photographer</li>
+                            <li>✓ 600+ Edited Photos</li>
+                            <li>✓ Premium Album & Prints</li>
+                            <li>✓ Priority Support</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="addPackageToCart('Premium Wedding Package', 2799)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="highlight-section">
+        <div class="container">
+            <h2>What's Included in All Packages</h2>
+            
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">📷</div>
+                        <h3>Professional Photography</h3>
+                        <p>Experienced photographers who understand lighting, composition, and capturing authentic moments.</p>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">✏️</div>
+                        <h3>Professional Editing</h3>
+                        <p>All photos are color-corrected, retouched, and edited to look their absolute best.</p>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">☁️</div>
+                        <h3>Online Gallery</h3>
+                        <p>Secure online gallery for easy viewing, sharing, and ordering prints and products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">💾</div>
+                        <h3>Digital Files</h3>
+                        <p>High-resolution digital downloads included with all packages for your convenience.</p>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">🎨</div>
+                        <h3>Creative Excellence</h3>
+                        <p>Our Black-owned team brings unique cultural perspectives and authentic storytelling.</p>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 48px; margin-bottom: var(--spacing-md);">⚡</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Quick turnaround times with convenient digital delivery and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Session?</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">
+                Choose a package above or contact us for a custom quote on your special project.
+            </p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="shop.html" class="btn btn-primary btn-large">View Cart</a>
+                <a href="contact.html" class="btn btn-secondary btn-large">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital-first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+    <script>
+        function addPackageToCart(packageName, price) {
+            alert(`${packageName} ($${price}) has been added to your cart! Visit the Shop page to review and proceed to checkout.`);
+        }
+    <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+</body>
+</html>

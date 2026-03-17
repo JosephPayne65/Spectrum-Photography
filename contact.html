@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+   <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="contact-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p class="tagline">Have questions? Need help? We're here to support you. Multiple ways to connect.</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section>
+        <div class="container">
+            <h2>Ways to Reach Us</h2>
+            
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-3">
+                    <div class="card">
+                        <div style="background: var(--accent-bold); height: 100px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: var(--primary-dark); font-size: 48px;">📞</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Phone</h3>
+                            <p class="card-text" style="margin-bottom: var(--spacing-md);">Call us during business hours for immediate assistance.</p>
+                            <p style="margin: 0; font-weight: bold; color: var(--accent-bold); font-size: 18px;">(555) 123-4567</p>
+                            <p style="margin: var(--spacing-xs) 0 0 0; font-size: 12px; color: var(--neutral-gray);">Mon-Fri 9AM-6PM CT</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div class="card">
+                        <div style="background: var(--accent-warm); height: 100px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 48px;">✉️</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Email</h3>
+                            <p class="card-text" style="margin-bottom: var(--spacing-md);">Send us a message and we'll respond within 24 hours.</p>
+                            <p style="margin: 0; font-weight: bold; color: var(--accent-warm); font-size: 16px; word-break: break-all;">orders@spectrumphotography.com</p>
+                            <p style="margin: var(--spacing-xs) 0 0 0; font-size: 12px; color: var(--neutral-gray);">Always available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-3">
+                    <div class="card">
+                        <div style="background: var(--accent-teal); height: 100px; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 48px;">💬</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Live Chat</h3>
+                            <p class="card-text" style="margin-bottom: var(--spacing-md);">Chat with our team in real time.</p>
+                            <button class="btn btn-primary btn-small" onclick="openChat()">Start Chat</button>
+                            <p style="margin: var(--spacing-xs) 0 0 0; font-size: 12px; color: var(--neutral-gray);">9AM-6PM CT Weekdays</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="highlight-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="margin-top: 0;">Send us a Message</h2>
+                    <p style="color: #666; margin-bottom: var(--spacing-lg);">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                    <form id="contactForm" onsubmit="submitContactForm(event)">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="(555) 123-4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Service Type *</label>
+                            <select required style="width: 100%; padding: var(--spacing-sm); border: 2px solid var(--border-color); border-radius: var(--border-radius); font-size: 14px;">
+                                <option value="">-- Select a service --</option>
+                                <option value="graduation">Graduation Photography</option>
+                                <option value="marching-band">Marching Band Coverage</option>
+                                <option value="family">Family Portraits</option>
+                                <option value="corporate">Corporate Headshots</option>
+                                <option value="events">Event Photography</option>
+                                <option value="custom">Custom Project</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" required placeholder="What is this about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea required placeholder="Tell us more about your inquiry..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: var(--spacing-sm); font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" required style="width: 20px; height: 20px; cursor: pointer;">
+                                <span>I agree to be contacted about my inquiry</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div>
+                    <!-- Office Location -->
+                    <div class="confirmation-card" style="margin-bottom: var(--spacing-lg);">
+                        <h3 style="margin-top: 0; color: var(--primary-dark);">📍 Office Location</h3>
+                        <p style="margin: 0; line-height: 1.8; color: #333;">
+                            <strong>Spectrum Photography Group</strong><br>
+                            Aurora, Illinois<br>
+                            United States
+                        </p>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="confirmation-card" style="margin-bottom: var(--spacing-lg);">
+                        <h3 style="margin-top: 0; color: var(--primary-dark);">🕐 Business Hours</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #333;">
+                            <li style="padding: 6px 0;"><strong>Monday - Friday</strong><br>9:00 AM - 6:00 PM CT</li>
+                            <li style="padding: 6px 0;"><strong>Saturday</strong><br>By Appointment</li>
+                            <li style="padding: 6px 0;"><strong>Sunday</strong><br>Closed</li>
+                        </ul>
+                    </div>
+
+                    <!-- Response Time -->
+                    <div class="confirmation-card" style="margin-bottom: var(--spacing-lg); background: #f0f8f0; border-left: 4px solid #28a745;">
+                        <h3 style="margin-top: 0; color: #28a745;">⚡ Response Times</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #333; line-height: 1.6;">
+                            <li><strong>Phone:</strong> Immediate</li>
+                            <li><strong>Chat:</strong> 5-10 minutes</li>
+                            <li><strong>Email:</strong> 24 hours</li>
+                            <li><strong>Contact Form:</strong> 24 hours</li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ Link -->
+                    <div class="confirmation-card" style="background: var(--light-gray);">
+                        <h3 style="margin-top: 0; color: var(--primary-dark);">❓ Have Questions?</h3>
+                        <p style="margin: 0 0 var(--spacing-md) 0; font-size: 14px; color: #666;">
+                            Check out our FAQ page for answers to common questions.
+                        </p>
+                        <a href="faq.html" class="btn btn-secondary" style="width: 100%; text-align: center; display: block; padding: var(--spacing-md); box-sizing: border-box;">Visit FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chat Widget (Placeholder) -->
+    <div id="chatWidget" style="display: none; position: fixed; bottom: 20px; right: 20px; width: 350px; height: 500px; background: white; border-radius: var(--border-radius); box-shadow: var(--shadow-heavy); z-index: 1000; flex-direction: column; overflow: hidden;">
+        <div style="background: var(--accent-bold); color: var(--primary-dark); padding: var(--spacing-md); display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="margin: 0; font-size: 16px;">💬 Live Chat</h4>
+            <button onclick="closeChat()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: var(--primary-dark);">×</button>
+        </div>
+        <div style="flex: 1; overflow-y: auto; padding: var(--spacing-md); background: var(--light-gray);">
+            <div style="background: white; padding: var(--spacing-md); border-radius: var(--border-radius); margin-bottom: var(--spacing-md);">
+                <p style="margin: 0; font-size: 14px; color: #333;"><strong>Spectrum Support:</strong> Hi there! How can we help you today?</p>
+            </div>
+        </div>
+        <div style="padding: var(--spacing-md); border-top: 1px solid var(--border-color); display: flex; gap: var(--spacing-sm);">
+            <input type="text" id="chatMessage" placeholder="Type a message..." style="flex: 1; padding: var(--spacing-sm); border: 1px solid var(--border-color); border-radius: var(--border-radius); font-size: 12px;">
+            <button onclick="sendChatMessage()" class="btn btn-primary btn-small" style="padding: var(--spacing-sm) var(--spacing-md);">Send</button>
+        </div>
+    </div>
+
+    <!-- FAQ Preview -->
+    <section>
+        <div class="container">
+            <h2>Quick Answers</h2>
+            <p style="text-align: center; color: #666; margin-bottom: var(--spacing-lg);">Can't find what you're looking for? Check our <a href="faq.html" style="color: var(--accent-bold); font-weight: bold;">complete FAQ</a>.</p>
+
+            <div class="row" style="margin-top: var(--spacing-lg);">
+                <div class="col-1-2">
+                    <div class="faq-item">
+                        <h4 style="color: var(--accent-bold); margin-bottom: var(--spacing-sm);">How long does delivery take?</h4>
+                        <p style="margin: 0; font-size: 14px; color: #666;">Digital downloads are instant. Prints and products ship within 3-5 business days.</p>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="faq-item">
+                        <h4 style="color: var(--accent-bold); margin-bottom: var(--spacing-sm);">Do you offer rush orders?</h4>
+                        <p style="margin: 0; font-size: 14px; color: #666;">Yes! Rush services available. Contact us for expedited options and pricing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-2">
+                    <div class="faq-item">
+                        <h4 style="color: var(--accent-bold); margin-bottom: var(--spacing-sm);">Can I request edits to my photos?</h4>
+                        <p style="margin: 0; font-size: 14px; color: #666;">Absolutely! We offer editing requests for all orders. Details available in your order confirmation.</p>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="faq-item">
+                        <h4 style="color: var(--accent-bold); margin-bottom: var(--spacing-sm);">What payment methods do you accept?</h4>
+                        <p style="margin: 0; font-size: 14px; color: #666;">We accept all major credit cards, PayPal, and digital payment methods for your convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's Create Something Beautiful</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">
+                Have a special project in mind? Let's discuss your vision.
+            </p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="services.html" class="btn btn-primary btn-large">View Services</a>
+                <a href="gallery.html" class="btn btn-secondary btn-large">Browse Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital-first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+    <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+        function openChat() {
+            document.getElementById('chatWidget').style.display = 'flex';
+        }
+
+        function closeChat() {
+            document.getElementById('chatWidget').style.display = 'none';
+        }
+
+        function sendChatMessage() {
+            const message = document.getElementById('chatMessage').value;
+            if (message.trim()) {
+                // In a real app, this would send to a server
+                alert('Message sent: ' + message + '\n\nOur team will respond shortly.');
+                document.getElementById('chatMessage').value = '';
+            }
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We will get back to you within 24 hours.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>

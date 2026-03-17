@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="gallery-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p class="tagline">Browse our recent work. Find your favorite photos and order prints, digital copies, and more.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+        <div class="container">
+            <h2>Explore Our Work</h2>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by date, event, or photographer...">
+                <button onclick="searchGallery()">Search</button>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-section">
+                <h3 style="margin-bottom: var(--spacing-md); color: var(--primary-dark);">Filter by Category</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
+                    <button class="filter-btn" onclick="filterGallery('Marching Band')">Marching Band</button>
+                    <button class="filter-btn" onclick="filterGallery('Headshots')">Headshots</button>
+                    <button class="filter-btn" onclick="filterGallery('Family')">Family Portraits</button>
+                    <button class="filter-btn" onclick="filterGallery('Engagement')">Engagement</button>
+                </div>
+            </div>
+
+            <!-- Gallery Stats -->
+            <div class="gallery-stats" id="galleryStats">
+                Showing 6 photos
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-container" id="galleryContainer">
+                <!-- Gallery items will be inserted here by JavaScript -->
+            </div>
+
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <button class="btn btn-primary btn-large" onclick="loadMorePhotos()">Load More Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                      <div class="lightbox-buttons">
+                <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn btn-secondary" onclick="orderSimilar()">Order Similar Photos</button>
+            </div>
+            <div class="lightbox-info">
+                <p id="lightboxCaption">Photo details and information</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">Browse our service packages or start building your custom order.</p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="shop.html" class="btn btn-primary btn-large">Browse Shop</a>
+                <a href="services.html" class="btn btn-secondary btn-large">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+   <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+        // Sample gallery data
+        const galleryPhotos = [
+            { id: 1, category: 'Graduation', title: 'Graduation session', caption: 'A lady standing in a cap and gown for graduation', image: 'photos/graduation_2.jpg'},
+            { id: 2, category: 'Marching Band', title: 'Marching Band Coverage', caption: 'Marching band in a parade', image: 'photos/band_2.jpg'},
+            { id: 3, category: 'Family', title: 'Family Session', caption: 'A famiy holding hands walking in the park', image: 'photos/family_1.jpg'},
+            { id: 4, category: 'Headshots', title: 'Corporate & Headshots', caption: 'A man standing in a suit getting his picture taken', image: 'photos/corporate_2.jpg'},
+            { id: 5, category: 'Sporting Events', title: 'Games and Matches', caption: 'A child kicking a soccer ball', image: 'photos/sport_1.jpg'},
+            { id: 6, category: 'Engagment', title: 'Engagement', caption: 'A couple proposing', image: 'photos/family_2.jpg'}
+        ];
+
+        let currentFilter = 'all';
+        let displayedPhotos = 6;
+
+        function initGallery() {
+            renderGallery();
+        }
+
+        function filterGallery(category) {
+            currentFilter = category;
+            displayedPhotos = 6;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderGallery();
+        }
+
+        function searchGallery() {
+            // Basic search functionality - can be enhanced
+            renderGallery();
+        }
+
+        function renderGallery() {
+            const container = document.getElementById('galleryContainer');
+            container.innerHTML = '';
+
+            const filtered = currentFilter === 'all' 
+                ? galleryPhotos.slice(0, displayedPhotos)
+                : galleryPhotos.filter(p => p.category === currentFilter).slice(0, displayedPhotos);
+
+            filtered.forEach(photo => {
+                const card = document.createElement('div');
+                card.className = 'gallery-card';
+                card.onclick = () => openLightbox(photo);
+                card.innerHTML = `
+                    <img src="${photo.image}" alt="${photo.title}">
+                    <div class="gallery-card-overlay">
+                        <div class="gallery-card-title">${photo.title}</div>
+                        <div class="gallery-card-category">${photo.category}</div>
+                        <button class="gallery-card-button" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update stats
+            const stats = document.getElementById('galleryStats');
+            stats.textContent = `Showing ${filtered.length} of ${currentFilter === 'all' ? galleryPhotos.length : galleryPhotos.filter(p => p.category === currentFilter).length} photos`;
+        }
+
+        function openLightbox(photo) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightboxImage').src = photo.image;
+            document.getElementById('lightboxCaption').innerHTML = `
+                <strong>${photo.title}</strong><br>
+                ${photo.caption}
+            `;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function addToCart() {
+            alert('Photo added to cart! Visit the Shop page to view your cart and proceed to checkout.');
+            closeLightbox();
+        }
+
+        function orderSimilar() {
+            alert('Filter applied! Browse similar photos above.');
+            closeLightbox();
+        }
+
+        function loadMorePhotos() {
+            displayedPhotos += 12;
+            renderGallery();
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Update cart badge on all pages
+        function updateCartBadgeGlobal() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
+            }
+        }
+
+        // Initialize gallery on page load
+        window.addEventListener('load', () => {
+            initGallery();
+            updateCartBadgeGlobal();
+        });
+    </script>
+</body>
+</html>

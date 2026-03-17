@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+  <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+
+    <!-- Success Message -->
+    <section class="hero" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+        <div class="container">
+            <div style="text-align: center;">
+                <div style="font-size: 72px; margin-bottom: var(--spacing-md);">✓</div>
+                <h1 style="color: white; margin-bottom: var(--spacing-md);">Order Confirmed!</h1>
+                <p class="tagline" style="color: rgba(255,255,255,0.95);">Thank you for your order. We're processing your photos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Details -->
+    <section>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+                <!-- Main Details -->
+                <div>
+                    <!-- Order Number -->
+                    <div class="confirmation-card">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+                            <div>
+                                <label style="font-size: 12px; color: var(--neutral-gray); font-weight: bold; text-transform: uppercase;">Order Number</label>
+                                <p style="margin: 0; font-size: 24px; font-weight: bold; color: var(--accent-bold);">SPG-2024-001847</p>
+                            </div>
+                            <div>
+                                <label style="font-size: 12px; color: var(--neutral-gray); font-weight: bold; text-transform: uppercase;">Order Date</label>
+                                <p style="margin: 0; font-size: 18px; color: var(--primary-dark);">January 5, 2025</p>
+                            </div>
+                        </div>
+
+                        <div style="border-top: 2px solid var(--border-color); padding-top: var(--spacing-lg);">
+                            <label style="font-size: 12px; color: var(--neutral-gray); font-weight: bold; text-transform: uppercase;">Estimated Delivery</label>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-top: var(--spacing-sm);">
+                                <div style="font-size: 32px;">📦</div>
+                                <div>
+                                    <p style="margin: 0; font-size: 18px; font-weight: bold; color: var(--primary-dark);">January 12, 2025</p>
+                                    <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Standard Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg);">
+                        <h2 style="margin-bottom: var(--spacing-lg); color: var(--primary-dark);">Your Items</h2>
+                        
+                        <div class="checkout-item">
+                            <div class="item-details">
+                                <h4 style="margin: 0 0 var(--spacing-xs) 0;">Graduation Portrait 001</h4>
+                                <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Digital Download</p>
+                                <p style="margin: 0; font-size: 12px; color: #999; margin-top: var(--spacing-xs);">Qty: 1</p>
+                            </div>
+                            <div class="item-price">
+                                <span style="font-weight: bold; color: var(--accent-bold);">$29.99</span>
+                            </div>
+                        </div>
+
+                        <div class="checkout-item">
+                            <div class="item-details">
+                                <h4 style="margin: 0 0 var(--spacing-xs) 0;">Family Portrait 001</h4>
+                                <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">8x10 Print</p>
+                                <p style="margin: 0; font-size: 12px; color: #999; margin-top: var(--spacing-xs);">Qty: 1</p>
+                            </div>
+                            <div class="item-price">
+                                <span style="font-weight: bold; color: var(--accent-bold);">$34.99</span>
+                            </div>
+                        </div>
+
+                        <div class="checkout-item">
+                            <div class="item-details">
+                                <h4 style="margin: 0 0 var(--spacing-xs) 0;">Wedding Reception 001</h4>
+                                <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Canvas (16x20)</p>
+                                <p style="margin: 0; font-size: 12px; color: #999; margin-top: var(--spacing-xs);">Qty: 1</p>
+                            </div>
+                            <div class="item-price">
+                                <span style="font-weight: bold; color: var(--accent-bold);">$89.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg);">
+                        <h3 style="margin-top: 0; color: var(--primary-dark);">Shipping Address</h3>
+                        <p style="margin: var(--spacing-md) 0; line-height: 1.8; color: #333;">
+                            John Doe<br>
+                            123 Main Street<br>
+                            Aurora, IL 60506<br>
+                            (555) 123-4567
+                        </p>
+                    </div>
+
+                    <!-- What's Next -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg); background: #f0f8ff; border-left: 4px solid var(--accent-secondary);">
+                        <h3 style="margin-top: 0; color: var(--primary-dark);">What's Next?</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: #333;">
+                            <li style="padding: var(--spacing-sm) 0;"><strong>✓ Step 1:</strong> Order processing & quality check</li>
+                            <li style="padding: var(--spacing-sm) 0;"><strong>✓ Step 2:</strong> Photos prepared for shipment/download</li>
+                            <li style="padding: var(--spacing-sm) 0;"><strong>✓ Step 3:</strong> Order ships (tracking info sent via email)</li>
+                            <li style="padding: var(--spacing-sm) 0;"><strong>✓ Step 4:</strong> Delivery & order complete</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <!-- Order Total -->
+                    <div class="cart-summary">
+                        <h3 style="margin-top: 0; color: var(--primary-dark); margin-bottom: var(--spacing-lg);">Order Total</h3>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span>$154.97</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span>$9.99</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span>$11.52</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>$176.48</span>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation Email -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg);">
+                        <h4 style="margin-top: 0; color: var(--primary-dark);">✓ Confirmation Sent</h4>
+                        <p style="margin: 0; font-size: 14px; color: #666; line-height: 1.6;">
+                            A detailed confirmation email has been sent to:<br>
+                            <strong style="color: var(--primary-dark);">john@example.com</strong>
+                        </p>
+                    </div>
+
+                    <!-- Download & Tracking -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg);">
+                        <h4 style="margin-top: 0; color: var(--primary-dark);">📥 Digital Downloads</h4>
+                        <p style="margin: 0 0 var(--spacing-md) 0; font-size: 14px; color: #666;">
+                            Your digital download is ready!
+                        </p>
+                        <button class="btn btn-primary" style="width: 100%; padding: var(--spacing-md);">Download Now</button>
+                    </div>
+
+                    <!-- Track Order -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg);">
+                        <h4 style="margin-top: 0; color: var(--primary-dark);">📍 Track Your Order</h4>
+                        <p style="margin: 0 0 var(--spacing-md) 0; font-size: 14px; color: #666;">
+                            Click below to track your shipment in real-time.
+                        </p>
+                        <button class="btn btn-secondary" style="width: 100%; padding: var(--spacing-md);">Track Order</button>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="confirmation-card" style="margin-top: var(--spacing-lg); background: var(--light-gray);">
+                        <h4 style="margin-top: 0; color: var(--primary-dark);">Need Help?</h4>
+                        <p style="margin: 0; font-size: 13px; color: #666; line-height: 1.6;">
+                            <strong>Phone:</strong><br>
+                            (555) 123-4567<br><br>
+                            <strong>Email:</strong><br>
+                            support@spectrumphotography.com<br><br>
+                            <strong>Hours:</strong><br>
+                            Mon-Fri 9AM-6PM CT
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Status Timeline -->
+    <section class="highlight-section">
+        <div class="container">
+            <h2>Order Status</h2>
+            
+            <div style="margin-top: var(--spacing-lg); position: relative;">
+                <div style="display: grid; gap: var(--spacing-lg);">
+                    <!-- Status Item 1 -->
+                    <div class="status-timeline-item completed">
+                        <div class="status-dot"></div>
+                        <div class="status-content">
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--primary-dark);">✓ Order Placed</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">January 5, 2025 at 2:45 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Status Item 2 -->
+                    <div class="status-timeline-item completed">
+                        <div class="status-dot"></div>
+                        <div class="status-content">
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--primary-dark);">✓ Payment Confirmed</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">January 5, 2025 at 2:47 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Status Item 3 -->
+                    <div class="status-timeline-item active">
+                        <div class="status-dot"></div>
+                        <div class="status-content">
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--accent-bold);">◉ Processing Order</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Currently being processed - Estimated 1-2 business days</p>
+                        </div>
+                    </div>
+
+                    <!-- Status Item 4 -->
+                    <div class="status-timeline-item">
+                        <div class="status-dot"></div>
+                        <div class="status-content">
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--neutral-gray);">○ Shipped</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Tracking info will be sent via email</p>
+                        </div>
+                    </div>
+
+                    <!-- Status Item 5 -->
+                    <div class="status-timeline-item">
+                        <div class="status-dot"></div>
+                        <div class="status-content">
+                            <h4 style="margin: 0 0 var(--spacing-xs) 0; color: var(--neutral-gray);">○ Delivered</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--neutral-gray);">Estimated January 12, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps CTA -->
+    <section>
+        <div class="container">
+            <div class="card" style="border-left: 4px solid var(--accent-bold); background: white; padding: var(--spacing-lg);">
+                <h2 style="margin-top: 0; color: var(--primary-dark); text-align: center;">What Would You Like to Do Next?</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-lg); margin-top: var(--spacing-lg);">
+                    <a href="gallery.html" class="btn btn-outline" style="text-align: center; padding: var(--spacing-md); display: block;">Browse Gallery</a>
+                    <a href="shop.html" class="btn btn-outline" style="text-align: center; padding: var(--spacing-md); display: block;">Continue Shopping</a>
+                    <a href="index.html" class="btn btn-primary" style="text-align: center; padding: var(--spacing-md); display: block;">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital-first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+    <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+        // Auto-scroll to top on load
+        window.scrollTo(0, 0);
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Spectrum Photography Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+    <div class="container">
+        <div class="nav-brand">SPECTRUM</div>
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="cart.html" class="nav-cart">
+                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="20" cy="20" r="1"></circle>
+                    </svg>
+                    <span class="nav-cart-badge" id="cartBadge">0</span>
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-overlay"></div>
+    </div>
+</nav>
+	
+    <!-- Hero Section -->
+    <section class="hero" id="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p class="tagline">Find answers to common questions about our services, ordering, and policies.</p>
+        </div>
+    
+    </section>
+
+    <!-- FAQ Items -->
+    <section>
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-accordion" id="faqContainer">
+                    <!-- FAQ items will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="highlight-section">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>Didn't Find Your Answer?</h2>
+                <p style="max-width: 600px; margin: 0 auto var(--spacing-lg); color: #666;">
+                    We're here to help! Contact our support team directly for any questions not covered in this FAQ.
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Spectrum Photography Group is your digital first photography platform for ordering, managing, and receiving professional photos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: orders@spectrumphotography.com</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Aurora, Illinois</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+        </div>
+    </footer>
+
+    <script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    if (mobileMenuToggle && navMenu && mobileOverlay) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-menu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+
+      // Close menu when clicking on overlay
+      mobileOverlay.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        body.style.overflow = '';
+      });
+
+      // Close menu with escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          mobileOverlay.classList.remove('active');
+          body.style.overflow = '';
+        }
+      });
+    }
+  });
+        // Update cart badge on all pages
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartBadge');
+            if (badge) {
+                badge.textContent = totalItems;
+            }
+        }
+
+        // FAQ functionality
+        const faqData = [
+            // Ordering
+            {
+                category: 'ordering',
+                question: 'How do I place an order?',
+                answer: 'Browse our gallery or services pages, select your photos or package, and add to cart. Then proceed to checkout where you can review your order and complete payment securely.'
+            },
+            {
+                category: 'ordering',
+                question: 'Can I customize my order?',
+                answer: 'Yes! You can crop photos, select different sizes and formats, and add special requests. Contact us for unique customization needs.'
+            },
+            {
+                category: 'ordering',
+                question: 'Do you offer bulk orders?',
+                answer: 'Absolutely! For large orders, we offer special bulk pricing. Contact us for a custom quote on quantities over 50 items.'
+            },
+            {
+                category: 'ordering',
+                question: 'What payment methods do you accept?',
+                answer: 'We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and digital payment methods for your convenience.'
+            },
+            // Delivery
+            {
+                category: 'delivery',
+                question: 'How long does delivery take?',
+                answer: 'Digital downloads are instant. Standard prints ship within 3-5 business days. Express shipping available for 1-2 business days.'
+            },
+            {
+                category: 'delivery',
+                question: 'Do you ship internationally?',
+                answer: 'Currently we ship to addresses in the United States. Digital downloads are available worldwide.'
+            },
+            {
+                category: 'delivery',
+                question: 'Can I track my order?',
+                answer: 'Yes! You can track your order status in real time from your order confirmation page or account dashboard.'
+            },
+            {
+                category: 'delivery',
+                question: 'Do you offer rush delivery?',
+                answer: 'Yes! Express shipping options available at checkout. For urgent needs, contact us directly for expedited arrangements.'
+            },
+            // Editing
+            {
+                category: 'editing',
+                question: 'Can I request edits to my photos?',
+                answer: 'Yes! All packages include one round of editing requests. Submit detailed requests through your order confirmation page.'
+            },
+            {
+                category: 'editing',
+                question: 'How long do editing requests take?',
+                answer: 'Standard editing requests are completed within 3-5 business days. Rush editing available for expedited service.'
+            },
+            {
+                category: 'editing',
+                question: 'What kind of edits can you do?',
+                answer: 'We offer color correction, retouching, cropping, background adjustments, and enhancement. Custom editing requests considered on a case by case basis.'
+            },
+            // Payments
+            {
+                category: 'payments',
+                question: 'Is my payment information secure?',
+                answer: 'Yes! All transactions are encrypted with 256 bit SSL security and processed through PCI compliant payment gateways.'
+            },
+            {
+                category: 'payments',
+                question: 'Do you offer payment plans?',
+                answer: 'For large orders, we can arrange payment plans. Contact us to discuss custom financing options.'
+            },
+            {
+                category: 'payments',
+                question: 'Can I use a promo code?',
+                answer: 'Yes! Enter promo codes at checkout. Check your confirmation email for any promotional offers available for your order.'
+            },
+            // Policies
+            {
+                category: 'policies',
+                question: 'What is your return policy?',
+                answer: 'We offer 30 day returns on unopened items. Digital files are non refundable once downloaded. Contact us to discuss specific situations.'
+            },
+            {
+                category: 'policies',
+                question: 'Can I cancel my order?',
+                answer: 'Orders can be cancelled within 24 hours of purchase for a full refund. After that, contact us to discuss options.'
+            },
+            {
+                category: 'policies',
+                question: 'Do you own copyright to my photos?',
+                answer: 'No! You retain all rights to your photos. We simply provide the photography and delivery service.'
+            },
+            {
+                category: 'policies',
+                question: 'Can I resell your prints?',
+                answer: 'Personal use is always allowed. Commercial resale requires written permission. Contact us for licensing inquiries.'
+            },
+            // Services
+            {
+                category: 'services',
+                question: 'Do you offer custom photography sessions?',
+                answer: 'Yes! Custom sessions available for weddings, events, corporate needs, and special projects. Contact us for a personalized quote.'
+            },
+            {
+                category: 'services',
+                question: 'How far in advance should I book?',
+                answer: 'We recommend booking 4-6 weeks in advance for graduation and event photography. Rush bookings considered on availability.'
+            },
+            {
+                category: 'services',
+                question: 'What is included in each package?',
+                answer: 'Each package includes professional photography, digital editing, and online gallery access. See our services page for specific package details.'
+            },
+            // Technical
+            {
+                category: 'technical',
+                question: 'What file formats are available?',
+                answer: 'Digital downloads available in JPG, PNG, and RAW formats depending on your package. Print orders are processed from highresolution files.'
+            },
+            {
+                category: 'technical',
+                question: 'How long can I access my online gallery?',
+                answer: 'Your online gallery is available for 1 year from purchase. Extended storage available upon request.'
+            },
+            {
+                category: 'technical',
+                question: 'Can I download my photos multiple times?',
+                answer: 'Yes! Download your digital files as many times as you need. They\'re always available in your account.'
+            },
+            {
+                category: 'technical',
+                question: 'Can I share my online gallery with others?',
+                answer: 'Yes! Your gallery includes shareable links. You can share with family and friends who can view and order prints if desired.'
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderFAQ() {
+            const container = document.getElementById('faqContainer');
+            container.innerHTML = '';
+
+            const filtered = currentFilter === 'all' 
+                ? faqData 
+                : faqData.filter(item => item.category === currentFilter);
+
+            filtered.forEach((item, index) => {
+                const accordion = document.createElement('div');
+                accordion.className = 'accordion-item';
+                accordion.innerHTML = `
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">${item.question}</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>${item.answer}</p>
+                    </div>
+                `;
+                container.appendChild(accordion);
+            });
+        }
+
+        function toggleAccordion(button) {
+            button.classList.toggle('active');
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function filterFAQ(category) {
+            currentFilter = category;
+            
+            // Update button states
+            document.querySelectorAll('.faq-category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderFAQ();
+        }
+
+        function searchFAQs() {
+            const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+            const container = document.getElementById('faqContainer');
+            container.innerHTML = '';
+
+            const filtered = faqData.filter(item => 
+                item.question.toLowerCase().includes(searchTerm) || 
+                item.answer.toLowerCase().includes(searchTerm)
+            );
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999; padding: var(--spacing-lg);">No results found. Try different search terms or <a href="contact.html">contact us</a>.</p>';
+                return;
+            }
+
+            filtered.forEach((item) => {
+                const accordion = document.createElement('div');
+                accordion.className = 'accordion-item';
+                accordion.innerHTML = `
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">${item.question}</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>${item.answer}</p>
+                    </div>
+                `;
+                container.appendChild(accordion);
+            });
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            renderFAQ();
+            updateCartBadge();
+        });
+    </script>
+</body>
+</html>
