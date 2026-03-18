@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+
+<!-- Navigation -->
+<nav>
     <div class="container">
         <div class="nav-brand">SPECTRUM</div>
+
         <!-- Mobile menu toggle -->
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
+
         <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
@@ -37,282 +38,269 @@
                 </a>
             </li>
         </ul>
+
         <div class="mobile-menu-overlay"></div>
     </div>
 </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="gallery-hero">
-        <div class="container">
-            <h1>Our Portfolio</h1>
-            <p class="tagline">Browse our recent work. Find your favorite photos and order prints, digital copies, and more.</p>
+<!-- Hero -->
+<section class="hero" id="gallery-hero">
+    <div class="container">
+        <h1>Our Portfolio</h1>
+        <p class="tagline">Browse our recent work. Find your favorite photos and order prints, digital copies, and more.</p>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section>
+    <div class="container">
+        <h2>Explore Our Work</h2>
+
+        <!-- Search -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by date, event, or photographer...">
+            <button onclick="searchGallery()">Search</button>
         </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section>
-        <div class="container">
-            <h2>Explore Our Work</h2>
-            
-            <!-- Search Bar -->
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search by date, event, or photographer...">
-                <button onclick="searchGallery()">Search</button>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-section">
-                <h3 style="margin-bottom: var(--spacing-md); color: var(--primary-dark);">Filter by Category</h3>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
-                    <button class="filter-btn" onclick="filterGallery('Marching Band')">Marching Band</button>
-                    <button class="filter-btn" onclick="filterGallery('Headshots')">Headshots</button>
-                    <button class="filter-btn" onclick="filterGallery('Family')">Family Portraits</button>
-                    <button class="filter-btn" onclick="filterGallery('Engagement')">Engagement</button>
-                </div>
-            </div>
-
-            <!-- Gallery Stats -->
-            <div class="gallery-stats" id="galleryStats">
-                Showing 6 photos
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="gallery-container" id="galleryContainer">
-                <!-- Gallery items will be inserted here by JavaScript -->
-            </div>
-
-            <div style="text-align: center; margin-top: var(--spacing-lg);">
-                <button class="btn btn-primary btn-large" onclick="loadMorePhotos()">Load More Photos</button>
+        <!-- Filters -->
+        <div class="filter-section">
+            <h3 style="margin-bottom: var(--spacing-md); color: var(--primary-dark);">Filter by Category</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterGallery('all', event)">All Photos</button>
+                <button class="filter-btn" onclick="filterGallery('Marching Band', event)">Marching Band</button>
+                <button class="filter-btn" onclick="filterGallery('Headshots', event)">Headshots</button>
+                <button class="filter-btn" onclick="filterGallery('Family', event)">Family Portraits</button>
+                <button class="filter-btn" onclick="filterGallery('Engagement', event)">Engagement</button>
             </div>
         </div>
-    </section>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-                      <div class="lightbox-buttons">
-                <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
-                <button class="btn btn-secondary" onclick="orderSimilar()">Order Similar Photos</button>
-            </div>
-            <div class="lightbox-info">
-                <p id="lightboxCaption">Photo details and information</p>
-            </div>
+        <!-- Stats -->
+        <div class="gallery-stats" id="galleryStats">Showing 6 photos</div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-container" id="galleryContainer"></div>
+
+        <div style="text-align: center; margin-top: var(--spacing-lg);">
+            <button class="btn btn-primary btn-large" onclick="loadMorePhotos()">Load More Photos</button>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+
+        <img id="lightboxImage" src="" alt="" class="lightbox-image">
+
+        <div class="lightbox-buttons">
+            <button class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+            <button class="btn btn-secondary" onclick="orderSimilar()">Order Similar Photos</button>
+        </div>
+
+        <div class="lightbox-info">
+            <p id="lightboxCaption">Photo details and information</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Order?</h2>
+        <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">Browse our service packages or start building your custom order.</p>
+        <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+            <a href="shop.html" class="btn btn-primary btn-large">Browse Shop</a>
+            <a href="services.html" class="btn btn-secondary btn-large">View Packages</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-section">
+            <h3>About</h3>
+            <p>Spectrum Photography Group is your digital first photography platform for ordering, managing, and receiving professional photos.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#">Live Chat</a></li>
+                <li><a href="#">Order Tracking</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <ul>
+                <li>Email: orders@spectrumphotography.com</li>
+                <li>Phone: (555) 123-4567</li>
+                <li>Aurora, Illinois</li>
+            </ul>
         </div>
     </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Order?</h2>
-            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">Browse our service packages or start building your custom order.</p>
-            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                <a href="shop.html" class="btn btn-primary btn-large">Browse Shop</a>
-                <a href="services.html" class="btn btn-secondary btn-large">View Packages</a>
-            </div>
-        </div>
-    </section>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
+    </div>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-section">
-                <h3>About</h3>
-                <p>Spectrum Photography Group is your digital first photography platform for ordering, managing, and receiving professional photos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#">Live Chat</a></li>
-                    <li><a href="#">Order Tracking</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>Email: orders@spectrumphotography.com</li>
-                    <li>Phone: (555) 123-4567</li>
-                    <li>Aurora, Illinois</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Spectrum Photography Group. All rights reserved. Black-Owned | All-Inclusive</p>
-        </div>
-    </footer>
 
-   <script>
-  // Mobile menu functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
-    const body = document.body;
+<!-- JavaScript -->
+<script>
+// -------------------- MOBILE MENU --------------------
 
-    if (mobileMenuToggle && navMenu && mobileOverlay) {
-      mobileMenuToggle.addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+
+    toggle.addEventListener('click', e => {
         e.stopPropagation();
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-      });
+        toggle.classList.toggle('active');
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    });
 
-      // Close menu when clicking on a link
-      const navLinks = document.querySelectorAll('.nav-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-          mobileOverlay.classList.remove('active');
-          body.style.overflow = '';
-        });
-      });
+    overlay.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
 
-      // Close menu when clicking on overlay
-      mobileOverlay.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        body.style.overflow = '';
-      });
+// -------------------- GALLERY DATA --------------------
 
-      // Close menu with escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          mobileMenuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-          mobileOverlay.classList.remove('active');
-          body.style.overflow = '';
-        }
-      });
-    }
-  });
-        // Sample gallery data
-        const galleryPhotos = [
-            { id: 1, category: 'Graduation', title: 'Graduation session', caption: 'A lady standing in a cap and gown for graduation', image: 'photos/graduation_2.jpg'},
-            { id: 2, category: 'Marching Band', title: 'Marching Band Coverage', caption: 'Marching band in a parade', image: 'photos/band_2.jpg'},
-            { id: 3, category: 'Family', title: 'Family Session', caption: 'A famiy holding hands walking in the park', image: 'photos/family_1.jpg'},
-            { id: 4, category: 'Headshots', title: 'Corporate & Headshots', caption: 'A man standing in a suit getting his picture taken', image: 'photos/corporate_2.jpg'},
-            { id: 5, category: 'Sporting Events', title: 'Games and Matches', caption: 'A child kicking a soccer ball', image: 'photos/sport_1.jpg'},
-            { id: 6, category: 'Engagment', title: 'Engagement', caption: 'A couple proposing', image: 'photos/family_2.jpg'}
-        ];
+const galleryPhotos = [
+    { id: 1, category: 'Graduation', title: 'Graduation Session', caption: 'A lady standing in a cap and gown.', image: 'photos/graduation_2.jpg' },
+    { id: 2, category: 'Marching Band', title: 'Marching Band Coverage', caption: 'Marching band in a parade.', image: 'photos/band_2.jpg' },
+    { id: 3, category: 'Family', title: 'Family Session', caption: 'Family walking in a park.', image: 'photos/family_1.jpg' },
+    { id: 4, category: 'Headshots', title: 'Corporate Headshots', caption: 'Business portrait session.', image: 'photos/corporate_2.jpg' },
+    { id: 5, category: 'Sporting Events', title: 'Games & Matches', caption: 'Soccer player kicking a ball.', image: 'photos/sport_1.jpg' },
+    { id: 6, category: 'Engagement', title: 'Engagement Session', caption: 'A couple proposing.', image: 'photos/family_2.jpg' }
+];
 
-        let currentFilter = 'all';
-        let displayedPhotos = 6;
+let currentFilter = 'all';
+let displayedPhotos = 6;
 
-        function initGallery() {
-            renderGallery();
-        }
+// -------------------- FILTER --------------------
 
-        function filterGallery(category) {
-            currentFilter = category;
-            displayedPhotos = 6;
-            
-            // Update active button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            renderGallery();
-        }
+function filterGallery(category, event) {
+    currentFilter = category;
+    displayedPhotos = 6;
 
-        function searchGallery() {
-            // Basic search functionality - can be enhanced
-            renderGallery();
-        }
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    if (event) event.target.classList.add('active');
 
-        function renderGallery() {
-            const container = document.getElementById('galleryContainer');
-            container.innerHTML = '';
+    renderGallery();
+}
 
-            const filtered = currentFilter === 'all' 
-                ? galleryPhotos.slice(0, displayedPhotos)
-                : galleryPhotos.filter(p => p.category === currentFilter).slice(0, displayedPhotos);
+// -------------------- SEARCH --------------------
 
-            filtered.forEach(photo => {
-                const card = document.createElement('div');
-                card.className = 'gallery-card';
-                card.onclick = () => openLightbox(photo);
-                card.innerHTML = `
-                    <img src="${photo.image}" alt="${photo.title}">
-                    <div class="gallery-card-overlay">
-                        <div class="gallery-card-title">${photo.title}</div>
-                        <div class="gallery-card-category">${photo.category}</div>
-                        <button class="gallery-card-button" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+function searchGallery() {
+    renderGallery();
+}
 
-            // Update stats
-            const stats = document.getElementById('galleryStats');
-            stats.textContent = `Showing ${filtered.length} of ${currentFilter === 'all' ? galleryPhotos.length : galleryPhotos.filter(p => p.category === currentFilter).length} photos`;
-        }
+// -------------------- RENDER GALLERY --------------------
 
-        function openLightbox(photo) {
-            document.getElementById('lightbox').classList.add('active');
-            document.getElementById('lightboxImage').src = photo.image;
-            document.getElementById('lightboxCaption').innerHTML = `
-                <strong>${photo.title}</strong><br>
-                ${photo.caption}
-            `;
-        }
+function renderGallery() {
+    const container = document.getElementById('galleryContainer');
+    container.innerHTML = '';
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
+    const filtered = (currentFilter === 'all')
+        ? galleryPhotos.slice(0, displayedPhotos)
+        : galleryPhotos.filter(p => p.category === currentFilter).slice(0, displayedPhotos);
 
-        function addToCart() {
-            alert('Photo added to cart! Visit the Shop page to view your cart and proceed to checkout.');
-            closeLightbox();
-        }
+    filtered.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
+        card.onclick = () => openLightbox(photo);
 
-        function orderSimilar() {
-            alert('Filter applied! Browse similar photos above.');
-            closeLightbox();
-        }
+        card.innerHTML = `
+            <img src="${photo.image}" alt="${photo.title}">
+            <div class="gallery-card-overlay">
+                <div class="gallery-card-title">${photo.title}</div>
+                <div class="gallery-card-category">${photo.category}</div>
+                <button class="gallery-card-button" onclick="event.stopPropagation(); addToCart()">Add to Cart</button>
+            </div>
+        `;
 
-        function loadMorePhotos() {
-            displayedPhotos += 12;
-            renderGallery();
-        }
+        container.appendChild(card);
+    });
 
-        // Close lightbox when clicking outside the image
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
+    const stats = document.getElementById('galleryStats');
+    stats.textContent = `Showing ${filtered.length} of ${
+        currentFilter === 'all'
+            ? galleryPhotos.length
+            : galleryPhotos.filter(p => p.category === currentFilter).length
+    } photos`;
+}
 
-        // Update cart badge on all pages
-        function updateCartBadgeGlobal() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const badge = document.getElementById('cartBadge');
-            if (badge) {
-                badge.textContent = totalItems;
-            }
-        }
+// -------------------- LIGHTBOX --------------------
 
-        // Initialize gallery on page load
-        window.addEventListener('load', () => {
-            initGallery();
-            updateCartBadgeGlobal();
-        });
-    </script>
+function openLightbox(photo) {
+    document.getElementById('lightbox').classList.add('active');
+    document.getElementById('lightboxImage').src = photo.image;
+    document.getElementById('lightboxCaption').innerHTML = `<strong>${photo.title}</strong><br>${photo.caption}`;
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+}
+
+document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeLightbox();
+});
+
+// -------------------- CART --------------------
+
+function addToCart() {
+    alert('Photo added to cart! Visit the Shop page to view your cart.');
+    closeLightbox();
+}
+
+function orderSimilar() {
+    alert('Filter applied! Browse similar photos above.');
+    closeLightbox();
+}
+
+// -------------------- LOAD MORE --------------------
+
+function loadMorePhotos() {
+    displayedPhotos += 12;
+    renderGallery();
+}
+
+// -------------------- UPDATE CART BADGE --------------------
+
+function updateCartBadgeGlobal() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const badge = document.getElementById('cartBadge');
+    if (badge) badge.textContent = total;
+}
+
+window.addEventListener('load', () => {
+    renderGallery();
+    updateCartBadgeGlobal();
+});
+
+</script>
+
 </body>
 </html>
