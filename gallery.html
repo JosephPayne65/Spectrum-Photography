@@ -187,12 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // -------------------- GALLERY DATA --------------------
 
 const galleryPhotos = [
-    { id: 1, category: 'Graduation', title: 'Graduation Session', caption: 'A lady standing in a cap and gown.', image: 'photos/graduation_2.jpg' },
-    { id: 2, category: 'Marching Band', title: 'Marching Band Coverage', caption: 'Marching band in a parade.', image: 'photos/band_2.jpg' },
-    { id: 3, category: 'Family', title: 'Family Session', caption: 'Family walking in a park.', image: 'photos/family_1.jpg' },
-    { id: 4, category: 'Headshots', title: 'Corporate Headshots', caption: 'Business portrait session.', image: 'photos/corporate_2.jpg' },
-    { id: 5, category: 'Sporting Events', title: 'Games & Matches', caption: 'Soccer player kicking a ball.', image: 'photos/sport_1.jpg' },
-    { id: 6, category: 'Engagement', title: 'Engagement Session', caption: 'A couple proposing.', image: 'photos/family_2.jpg' }
+    { id: 1, category: 'Graduation', title: 'Graduation Session', caption: 'A lady standing in a cap and gown.', image: 'images/graduation_2.jpg' },
+    { id: 2, category: 'Marching Band', title: 'Marching Band Coverage', caption: 'Marching band in a parade.', image: 'images/band_2.jpg' },
+    { id: 3, category: 'Family', title: 'Family Session', caption: 'Family walking in a park.', image: 'images/family_1.jpg' },
+    { id: 4, category: 'Headshots', title: 'Corporate Headshots', caption: 'Business portrait session.', image: 'images/corporate_2.jpg' },
+    { id: 5, category: 'Sporting Events', title: 'Games & Matches', caption: 'Soccer player kicking a ball.', image: 'images/sport_1.jpg' },
+    { id: 6, category: 'Engagement', title: 'Engagement Session', caption: 'A couple proposing.', image: 'images/family_2.jpg' }
 ];
 
 let currentFilter = 'all';
@@ -232,7 +232,7 @@ function renderGallery() {
         card.onclick = () => openLightbox(photo);
 
         card.innerHTML = `
-            <img src="${photo.image}" alt="${photo.title}">
+            <img src="${images.image}" alt="${photo.title}">
             <div class="gallery-card-overlay">
                 <div class="gallery-card-title">${photo.title}</div>
                 <div class="gallery-card-category">${photo.category}</div>
