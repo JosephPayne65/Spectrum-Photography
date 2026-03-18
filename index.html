@@ -6,43 +6,116 @@
     <title>Index - Spectrum Photography Group</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/couple_1.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.52);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero .tagline {
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+        }
+
+        /* ── Card photo ── */
+        .card-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* ── Photo Gallery Grid ── */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.75em;
+            margin-top: 1.5em;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-    <div class="container">
-        <div class="nav-brand">SPECTRUM</div>
-        <!-- Mobile menu toggle -->
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li>
-                <a href="cart.html" class="nav-cart">
-                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
-                        <circle cx="9" cy="20" r="1"></circle>
-                        <circle cx="20" cy="20" r="1"></circle>
-                    </svg>
-                    <span class="nav-cart-badge" id="cartBadge">0</span>
-                </a>
-            </li>
-        </ul>
-        <div class="mobile-menu-overlay"></div>
-    </div>
-</nav>
+        <div class="container">
+            <div class="nav-brand">SPECTRUM</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="nav-cart">
+                        <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                            <circle cx="9" cy="20" r="1"></circle>
+                            <circle cx="20" cy="20" r="1"></circle>
+                        </svg>
+                        <span class="nav-cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mobile-menu-overlay"></div>
+        </div>
+    </nav>
 
-    <!-- Hero section -->
+    <!-- Hero -->
     <section class="hero" id="home">
+        <div class="hero-bg"></div>
         <div class="container">
             <h1>Capture Life's Spectrum</h1>
             <p class="tagline">Your Digital First Photography Platform. Order photos, manage edits, and celebrate moments all in one place.</p>
@@ -53,59 +126,55 @@
         </div>
     </section>
 
+    <!-- Vision -->
     <section class="highlight-section">
         <div class="container">
             <h2>Our Vision</h2>
             <div class="row">
                 <div class="col-1-2">
                     <h3 style="color: var(--accent-bold); margin-bottom: var(--spacing-md);">📸 Our Mission</h3>
-                    <p>To celebrate the diversity of human experience through visual storytelling. As a minority-owned photography company, we bring unique cultural insights and authentic community connections to every project. We believe that great photography transcends technical skill it requires empathy, cultural awareness, and a genuine commitment to seeing and celebrating the beauty in every moment.</p>
+                    <p>To celebrate the diversity of human experience through visual storytelling. As a minority-owned photography company, we bring unique cultural insights and authentic community connections to every project. We believe that great photography transcends technical skill — it requires empathy, cultural awareness, and a genuine commitment to seeing and celebrating the beauty in every moment.</p>
                 </div>
                 <div class="col-1-2">
                     <h3 style="color: var(--accent-warm); margin-bottom: var(--spacing-md);">✨ Why Spectrum Differs</h3>
-                    <p>We don't just photograph moments we honor them. Our diverse team brings perspectives that mainstream studios overlook. We understand the cultural significance of celebrations, family traditions, and milestones that matter most. Our minority owned status isn't just a badge; it's the foundation of our creative approach, our community trust, and our commitment to representing clients authentically.</p>
+                    <p>We don't just photograph moments — we honor them. Our diverse team brings perspectives that mainstream studios overlook. We understand the cultural significance of celebrations, family traditions, and milestones that matter most. Our minority-owned status isn't just a badge; it's the foundation of our creative approach, our community trust, and our commitment to representing clients authentically.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Services -->
     <section id="services">
         <div class="container">
             <h2>Our Services</h2>
             <div class="row">
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: var(--accent-bold); height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: var(--primary-dark); font-size: 48px;">💒</span>
-                        </div>
+                        <img src="images/wedding_1.jpg" alt="Wedding photography" class="card-photo">
                         <div class="card-body">
                             <h3 class="card-title">Wedding Photography</h3>
-                            <p class="card-text">Intimate ceremonies to grand celebrations we capture the love, joy, and cultural richness of your special day.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <p class="card-text">Intimate ceremonies to grand celebrations — we capture the love, joy, and cultural richness of your special day.</p>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: var(--accent-warm); height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 48px;">🎉</span>
-                        </div>
+                        <img src="images/parade_1.jpg" alt="Event coverage" class="card-photo">
                         <div class="card-body">
                             <h3 class="card-title">Event Coverage</h3>
-                            <p class="card-text">Corporate events, galas, birthday celebrations comprehensive coverage that tells your event's complete story.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <p class="card-text">Corporate events, galas, birthday celebrations — comprehensive coverage that tells your event's complete story.</p>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: var(--accent-teal); height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 48px;">👥</span>
-                        </div>
+                        <img src="images/family_1.jpg" alt="Family portraits" class="card-photo">
                         <div class="card-body">
                             <h3 class="card-title">Family Portraits</h3>
                             <p class="card-text">Authentic family sessions that celebrate your unique bonds and cultural heritage.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -114,37 +183,31 @@
             <div class="row" style="margin-top: var(--spacing-lg);">
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: var(--accent-secondary); height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 48px;">💼</span>
-                        </div>
+                        <img src="images/corporate_1.jpg" alt="Corporate photography" class="card-photo">
                         <div class="card-body">
                             <h3 class="card-title">Corporate Photography</h3>
                             <p class="card-text">Professional headshots, corporate events, and brand imagery that reflects your business values.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: #5a4a42; height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 48px;">🎯</span>
-                        </div>
+                        <img src="images/graduation_1.jpg" alt="Graduation photography" class="card-photo">
                         <div class="card-body">
-                            <h3 class="card-title">Professional Headshots</h3>
-                            <p class="card-text">LinkedInready portraits and professional headshots that showcase the real you.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <h3 class="card-title">Graduation Sessions</h3>
+                            <p class="card-text">Milestone portraits that honor your achievement and capture the pride of your biggest day.</p>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-1-3">
                     <div class="card">
-                        <div style="background: #3d5a5a; height: 150px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-size: 48px;">📸</span>
-                        </div>
+                        <img src="images/sport_1.jpg" alt="Sports photography" class="card-photo">
                         <div class="card-body">
-                            <h3 class="card-title">Commercial Shoots</h3>
-                            <p class="card-text">Product photography, commercial campaigns, and creative content that tells your brand's story.</p>
-                            <a href="#" class="btn btn-outline">Learn More</a>
+                            <h3 class="card-title">Sports Photography</h3>
+                            <p class="card-text">Action shots, team portraits, and game-day coverage that captures the energy and emotion of competition.</p>
+                            <a href="services.html" class="btn btn-outline">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -152,6 +215,39 @@
         </div>
     </section>
 
+    <!-- Photo Gallery -->
+    <section id="gallery-preview">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="photo-gallery">
+                <img src="images/couple_1.jpg"      alt="Couple portrait"      class="gallery-img">
+                <img src="images/couple_2.jpg"      alt="Couple portrait"      class="gallery-img">
+                <img src="images/family_1.jpg"      alt="Family portrait"      class="gallery-img">
+                <img src="images/family_2.jpg"      alt="Family portrait"      class="gallery-img">
+                <img src="images/family_3.jpg"      alt="Family portrait"      class="gallery-img">
+                <img src="images/graduation_1.jpg"  alt="Graduation"           class="gallery-img">
+                <img src="images/graduation_2.jpg"  alt="Graduation"           class="gallery-img">
+                <img src="images/graduation_3.jpg"  alt="Graduation"           class="gallery-img">
+                <img src="images/graduation_4.jpg"  alt="Graduation"           class="gallery-img">
+                <img src="images/graduation_5.jpg"  alt="Graduation"           class="gallery-img">
+                <img src="images/outdoor_1.jpg"     alt="Outdoor session"      class="gallery-img">
+                <img src="images/parade_1.jpg"      alt="Parade coverage"      class="gallery-img">
+                <img src="images/sport_1.jpg"       alt="Sports photography"   class="gallery-img">
+                <img src="images/sport_2.jpg"       alt="Sports photography"   class="gallery-img">
+                <img src="images/sport_3.jpg"       alt="Sports photography"   class="gallery-img">
+                <img src="images/wedding_1.jpg"     alt="Wedding photography"  class="gallery-img">
+                <img src="images/wedding_2.jpg"     alt="Wedding photography"  class="gallery-img">
+                <img src="images/corporate_1.jpg"   alt="Corporate session"    class="gallery-img">
+                <img src="images/corporate_2.jpg"   alt="Corporate session"    class="gallery-img">
+                <img src="images/corporate_3.jpg"   alt="Corporate session"    class="gallery-img">
+            </div>
+            <div style="text-align:center; margin-top:1.75em;">
+                <a href="gallery.html" class="btn btn-primary btn-large">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
     <section id="why-us">
         <div class="container">
             <h2>Why Choose Spectrum Photography Group</h2>
@@ -159,37 +255,38 @@
                 <div class="value-item">
                     <div class="value-icon">🎨</div>
                     <h3>Diverse Creative Vision</h3>
-                    <p>Our minority owned creative team brings unique cultural perspectives and authentic storytelling that mainstream studios often miss. We celebrate the richness of diverse traditions and families.</p>
+                    <p>Our minority-owned creative team brings unique cultural perspectives and authentic storytelling that mainstream studios often miss.</p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">❤️</div>
                     <h3>Cultural Authenticity</h3>
-                    <p>We understand the significance of cultural ceremonies, family traditions, and milestone moments. Our photographers speak the language of community and celebrate what makes your story special.</p>
+                    <p>We understand the significance of cultural ceremonies, family traditions, and milestone moments. We celebrate what makes your story special.</p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">⭐</div>
                     <h3>Professional Excellence</h3>
-                    <p>Award winning photographers with years of experience. State-of-the-art equipment. Professional editing. Premium products. We deliver exceptional quality that exceeds expectations.</p>
+                    <p>Award-winning photographers with years of experience. State-of-the-art equipment. Professional editing. Premium products.</p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">🤝</div>
                     <h3>Community Connection</h3>
-                    <p>We're not just a vendor we're part of the community. We invest in local relationships, understand your values, and treat every client like family.</p>
+                    <p>We're not just a vendor — we're part of the community. We invest in local relationships and treat every client like family.</p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">💡</div>
                     <h3>Creative Innovation</h3>
-                    <p>From traditional techniques to cutting edge creativity, we blend timeless artistry with modern innovation. Your photos will be beautiful and timeless.</p>
+                    <p>From traditional techniques to cutting-edge creativity, we blend timeless artistry with modern innovation.</p>
                 </div>
                 <div class="value-item">
                     <div class="value-icon">✅</div>
-                    <h3>Reliable & Responsive</h3>
-                    <p>Dedicated client coordinators. Fast turnaround. Clear communication. We're here to make your experience smooth from booking through final delivery.</p>
+                    <h3>Reliable &amp; Responsive</h3>
+                    <p>Dedicated client coordinators. Fast turnaround. Clear communication. We're here every step of the way.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Book?</h2>
@@ -201,6 +298,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-section">
@@ -240,25 +338,22 @@
     </footer>
 
     <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             const mobileOverlay = document.querySelector('.mobile-menu-overlay');
             const body = document.querySelector('body');
-            
+
             if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function(e) {
+                mobileMenuToggle.addEventListener('click', function (e) {
                     e.stopPropagation();
                     this.classList.toggle('active');
                     navMenu.classList.toggle('active');
                     mobileOverlay.classList.toggle('active');
                     body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
                 });
-                
-                // Close menu when clicking on a link
-                const navLinks = document.querySelectorAll('.nav-menu a');
-                navLinks.forEach(link => {
+
+                document.querySelectorAll('.nav-menu a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenuToggle.classList.remove('active');
                         navMenu.classList.remove('active');
@@ -266,16 +361,14 @@
                         body.style.overflow = '';
                     });
                 });
-                
-                // Close menu when clicking on overlay
+
                 mobileOverlay.addEventListener('click', () => {
                     mobileMenuToggle.classList.remove('active');
                     navMenu.classList.remove('active');
                     mobileOverlay.classList.remove('active');
                     body.style.overflow = '';
                 });
-                
-                // Close menu with escape key
+
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                         mobileMenuToggle.classList.remove('active');
@@ -285,22 +378,10 @@
                     }
                 });
             }
-            
-            // Touch-friendly improvements
-            document.querySelectorAll('.card, .btn, .gallery-item, .value-item').forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.classList.add('touch-active');
-                });
-                
-                element.addEventListener('touchend', function() {
-                    this.classList.remove('touch-active');
-                });
-            });
-            
-            // Update cart badge (example functionality)
+
+            // Cart badge
             const cartBadge = document.getElementById('cartBadge');
             if (cartBadge) {
-                // Example: Check for cart items in localStorage
                 const cartItems = JSON.parse(localStorage.getItem('spectrumCart') || '[]');
                 cartBadge.textContent = cartItems.length > 0 ? cartItems.length : '0';
                 cartBadge.style.display = cartItems.length > 0 ? 'flex' : 'none';
