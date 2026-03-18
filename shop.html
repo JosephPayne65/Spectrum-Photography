@@ -6,43 +6,83 @@
     <title>Shop - Spectrum Photography Group</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/wedding_2.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+        }
+
+        .hero .tagline {
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-    <div class="container">
-        <div class="nav-brand">SPECTRUM</div>
-        <!-- Mobile menu toggle -->
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li>
-                <a href="cart.html" class="nav-cart">
-                    <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
-                        <circle cx="9" cy="20" r="1"></circle>
-                        <circle cx="20" cy="20" r="1"></circle>
-                    </svg>
-                    <span class="nav-cart-badge" id="cartBadge">0</span>
-                </a>
-            </li>
-        </ul>
-        <div class="mobile-menu-overlay"></div>
-    </div>
-</nav>
-	
-    <!-- Hero Section -->
+        <div class="container">
+            <div class="nav-brand">SPECTRUM</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="nav-cart">
+                        <svg class="nav-cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3H1v2h2.31l2.76 9c.41 1.41 1.76 2.35 3.31 2.35h9.6c1.61 0 3-1.16 3.22-2.75l1.38-9z"></path>
+                            <circle cx="9" cy="20" r="1"></circle>
+                            <circle cx="20" cy="20" r="1"></circle>
+                        </svg>
+                        <span class="nav-cart-badge" id="cartBadge">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mobile-menu-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
     <section class="hero" id="shop-hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <h1>Photo Shop</h1>
             <p class="tagline">Browse and order photos from our gallery. Choose your format and receive your photos.</p>
@@ -57,33 +97,25 @@
             <!-- Digital Downloads -->
             <div style="margin-bottom: var(--spacing-xl);">
                 <h3 style="color: var(--accent-bold); margin-bottom: var(--spacing-lg);">📥 Digital Downloads</h3>
-                <div class="row" id="digitalSection">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
+                <div class="row" id="digitalSection"></div>
             </div>
 
             <!-- Prints -->
             <div style="margin-bottom: var(--spacing-xl);">
                 <h3 style="color: var(--accent-warm); margin-bottom: var(--spacing-lg);">🖼️ Prints</h3>
-                <div class="row" id="printsSection">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
+                <div class="row" id="printsSection"></div>
             </div>
 
             <!-- Canvas -->
             <div style="margin-bottom: var(--spacing-xl);">
                 <h3 style="color: var(--accent-teal); margin-bottom: var(--spacing-lg);">🎨 Canvas Prints</h3>
-                <div class="row" id="canvasSection">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
+                <div class="row" id="canvasSection"></div>
             </div>
 
             <!-- Albums -->
             <div>
                 <h3 style="color: var(--accent-secondary); margin-bottom: var(--spacing-lg);">📚 Photo Albums</h3>
-                <div class="row" id="albumsSection">
-                    <!-- Items will be populated by JavaScript -->
-                </div>
+                <div class="row" id="albumsSection"></div>
             </div>
         </div>
     </section>
@@ -92,32 +124,31 @@
     <section class="highlight-section">
         <div class="container">
             <h2>How to Order Your Photos</h2>
-
             <div class="row" style="margin-top: var(--spacing-lg);">
                 <div class="col-1-4">
                     <div style="text-align: center; padding: var(--spacing-lg);">
-                        <div style="font-size: 48px; margin-bottom: var(--spacing-md); background: var(--accent-bold); color: var(--primary-dark); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">1</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: var(--spacing-md); background: var(--accent-bold); color: var(--primary-dark); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">1</div>
                         <h3>Browse</h3>
                         <p>Explore our gallery and find photos you love.</p>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div style="text-align: center; padding: var(--spacing-lg);">
-                        <div style="font-size: 48px; margin-bottom: var(--spacing-md); background: var(--accent-warm); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">2</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: var(--spacing-md); background: var(--accent-warm); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">2</div>
                         <h3>Select Format</h3>
                         <p>Choose digital, prints, canvas, or albums.</p>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div style="text-align: center; padding: var(--spacing-lg);">
-                        <div style="font-size: 48px; margin-bottom: var(--spacing-md); background: var(--accent-teal); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">3</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: var(--spacing-md); background: var(--accent-teal); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">3</div>
                         <h3>Add to Cart</h3>
                         <p>Select size and add items to your cart.</p>
                     </div>
                 </div>
                 <div class="col-1-4">
                     <div style="text-align: center; padding: var(--spacing-lg);">
-                        <div style="font-size: 48px; margin-bottom: var(--spacing-md); background: var(--accent-secondary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">4</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-bottom: var(--spacing-md); background: var(--accent-secondary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">4</div>
                         <h3>Checkout</h3>
                         <p>Complete your order and receive your photos.</p>
                     </div>
@@ -126,7 +157,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
             <h2>Start Your Order Today</h2>
@@ -145,7 +176,7 @@
         <div class="container">
             <div class="footer-section">
                 <h3>About</h3>
-                <p>Spectrum Photography Group is your digital first photography platform for ordering, managing, and receiving professional photos.</p>
+                <p>Spectrum Photography Group is your digital-first photography platform for ordering, managing, and receiving professional photos.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -180,153 +211,105 @@
     </footer>
 
     <script>
-  // Mobile menu functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
-    const body = document.body;
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+            const body = document.body;
 
-    if (mobileMenuToggle && navMenu && mobileOverlay) {
-      mobileMenuToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-      });
+            if (mobileMenuToggle && navMenu && mobileOverlay) {
+                mobileMenuToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    mobileOverlay.classList.toggle('active');
+                    body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                });
 
-      // Close menu when clicking on a link
-      const navLinks = document.querySelectorAll('.nav-menu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-          mobileOverlay.classList.remove('active');
-          body.style.overflow = '';
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        mobileOverlay.classList.remove('active');
+                        body.style.overflow = '';
+                    });
+                });
+
+                mobileOverlay.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    mobileOverlay.classList.remove('active');
+                    body.style.overflow = '';
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                        mobileMenuToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        mobileOverlay.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                });
+            }
         });
-      });
 
-      // Close menu when clicking on overlay
-      mobileOverlay.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        body.style.overflow = '';
-      });
-
-      // Close menu with escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          mobileMenuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-          mobileOverlay.classList.remove('active');
-          body.style.overflow = '';
-        }
-      });
-    }
-  });
-        // Product data
+        // FIXED: all image paths changed from photos/ to images/
+        // NOTE: band_1.jpg was referenced but you only have the categories listed —
+        // swapped to corporate_3.jpg as a placeholder for that slot
         const products = {
             digital: [
-                { id: 1, name: 'Marching Band', price: 9.99, image: 'photos/band_1.jpg' },
-                { id: 2, name: 'Headshot', price: 7.99, image: 'photos/corporate_1.jpg' },
-                { id: 3, name: 'Couple', price: 12.99, image: 'photos/couple_1.jpg' },
-                { id: 4, name: 'Family', price: 14.99, image: 'photos/family_1.jpg' }
+                { id: 1,  name: 'Marching Band',  price: 9.99,  image: 'images/sport_1.jpg' },
+                { id: 2,  name: 'Headshot',        price: 7.99,  image: 'images/corporate_1.jpg' },
+                { id: 3,  name: 'Couple',          price: 12.99, image: 'images/couple_1.jpg' },
+                { id: 4,  name: 'Family',          price: 14.99, image: 'images/family_1.jpg' }
             ],
             prints: [
-                { id: 5, name: '4x6 Print', price: 4.99, image: 'photos/family_3.jpg' },
-                { id: 6, name: '8x10 Print', price: 14.99, image: 'photos/wedding_1.jpg' },
-                { id: 7, name: '11x14 Print', price: 24.99, image: 'photos/parade_1.jpg' },
-                { id: 8, name: '16x20 Print', price: 39.99, image: 'photos/sport_3.jpg' }
+                { id: 5,  name: '4x6 Print',      price: 4.99,  image: 'images/family_3.jpg' },
+                { id: 6,  name: '8x10 Print',     price: 14.99, image: 'images/wedding_1.jpg' },
+                { id: 7,  name: '11x14 Print',    price: 24.99, image: 'images/parade_1.jpg' },
+                { id: 8,  name: '16x20 Print',    price: 39.99, image: 'images/sport_3.jpg' }
             ],
             canvas: [
-                { id: 9, name: '8x10 Canvas', price: 34.99, image: 'photos/graduation_3.jpg' },
-                { id: 10, name: '11x14 Canvas', price: 54.99, image: 'photos/family_2.jpg' },
-                { id: 11, name: '16x20 Canvas', price: 79.99, image: 'photos/wedding_2.jpg' },
-                { id: 12, name: '24x36 Canvas', price: 119.99, image: 'photos/sport_2.jpg' }
+                { id: 9,  name: '8x10 Canvas',    price: 34.99,  image: 'images/graduation_3.jpg' },
+                { id: 10, name: '11x14 Canvas',   price: 54.99,  image: 'images/family_2.jpg' },
+                { id: 11, name: '16x20 Canvas',   price: 79.99,  image: 'images/wedding_2.jpg' },
+                { id: 12, name: '24x36 Canvas',   price: 119.99, image: 'images/sport_2.jpg' }
             ],
             albums: [
-                { id: 13, name: '5x7 Album (20 pages)', price: 49.99, image: 'photos/graduation_4.jpg' },
-                { id: 14, name: '8x10 Album (30 pages)', price: 79.99, image: 'photos/outdoor_1.jpg' },
-                { id: 15, name: '11x14 Album (40 pages)', price: 129.99, image: 'photos/graduation_5.jpg' }
+                { id: 13, name: '5x7 Album (20 pages)',   price: 49.99,  image: 'images/graduation_4.jpg' },
+                { id: 14, name: '8x10 Album (30 pages)',  price: 79.99,  image: 'images/outdoor_1.jpg' },
+                { id: 15, name: '11x14 Album (40 pages)', price: 129.99, image: 'images/graduation_5.jpg' }
             ]
         };
 
-        // Cart management
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         function renderProducts() {
-            // Digital
-            document.getElementById('digitalSection').innerHTML = products.digital
-                .map(p => `
-                    <div class="col-1-4">
-                        <div class="card">
-                            <img src="${p.image}" alt="${p.name}" class="card-image">
-                            <div class="card-body">
-                                <h4 style="margin: 0 0 var(--spacing-sm) 0; font-size: 16px;">${p.name}</h4>
-                                <div class="card-price">$${p.price.toFixed(2)}</div>
-                                <button class="btn btn-primary btn-small" style="width: 100%;" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Add to Cart</button>
-                            </div>
+            const makeCard = (p, colClass) => `
+                <div class="${colClass}">
+                    <div class="card">
+                        <img src="${p.image}" alt="${p.name}" class="card-image">
+                        <div class="card-body">
+                            <h4 style="margin: 0 0 var(--spacing-sm) 0; font-size: 16px;">${p.name}</h4>
+                            <div class="card-price">$${p.price.toFixed(2)}</div>
+                            <button class="btn btn-primary btn-small" style="width: 100%;" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Add to Cart</button>
                         </div>
                     </div>
-                `).join('');
+                </div>`;
 
-            // Prints
-            document.getElementById('printsSection').innerHTML = products.prints
-                .map(p => `
-                    <div class="col-1-4">
-                        <div class="card">
-                            <img src="${p.image}" alt="${p.name}" class="card-image">
-                            <div class="card-body">
-                                <h4 style="margin: 0 0 var(--spacing-sm) 0; font-size: 16px;">${p.name}</h4>
-                                <div class="card-price">$${p.price.toFixed(2)}</div>
-                                <button class="btn btn-primary btn-small" style="width: 100%;" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-
-            // Canvas
-            document.getElementById('canvasSection').innerHTML = products.canvas
-                .map(p => `
-                    <div class="col-1-4">
-                        <div class="card">
-                            <img src="${p.image}" alt="${p.name}" class="card-image">
-                            <div class="card-body">
-                                <h4 style="margin: 0 0 var(--spacing-sm) 0; font-size: 16px;">${p.name}</h4>
-                                <div class="card-price">$${p.price.toFixed(2)}</div>
-                                <button class="btn btn-primary btn-small" style="width: 100%;" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-
-            // Albums
-            document.getElementById('albumsSection').innerHTML = products.albums
-                .map(p => `
-                    <div class="col-1-3">
-                        <div class="card">
-                            <img src="${p.image}" alt="${p.name}" class="card-image">
-                            <div class="card-body">
-                                <h4 style="margin: 0 0 var(--spacing-sm) 0; font-size: 16px;">${p.name}</h4>
-                                <div class="card-price">$${p.price.toFixed(2)}</div>
-                                <button class="btn btn-primary btn-small" style="width: 100%;" onclick="addToCart(${p.id}, '${p.name}', ${p.price})">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
+            document.getElementById('digitalSection').innerHTML  = products.digital.map(p => makeCard(p, 'col-1-4')).join('');
+            document.getElementById('printsSection').innerHTML   = products.prints.map(p => makeCard(p, 'col-1-4')).join('');
+            document.getElementById('canvasSection').innerHTML   = products.canvas.map(p => makeCard(p, 'col-1-4')).join('');
+            document.getElementById('albumsSection').innerHTML   = products.albums.map(p => makeCard(p, 'col-1-3')).join('');
         }
 
         function addToCart(id, name, price) {
             const existingItem = cart.find(item => item.id === id);
-            
             if (existingItem) {
                 existingItem.quantity++;
             } else {
                 cart.push({ id, name, price, quantity: 1 });
             }
-            
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartBadge();
             alert(`${name} added to cart!`);
@@ -337,7 +320,6 @@
             document.getElementById('cartBadge').textContent = totalItems;
         }
 
-        // Initialize on page load
         window.addEventListener('load', () => {
             renderProducts();
             updateCartBadge();
